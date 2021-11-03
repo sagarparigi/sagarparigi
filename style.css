@@ -2,12 +2,11 @@
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
-    height: 650px;
+    height: 550px;
 }
 .headerset{
     padding: 300px;
     box-sizing: border-box;
-    margin-top: 100px;
 }
 .headerset h1{
     font-size: 80px;
