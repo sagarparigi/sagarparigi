@@ -49,14 +49,6 @@ h1{
     color: black;
     margin-top: 250px;
 }
-
-.navbar-nav li a{
-    transition: 0.7s ease;
-    margin: 18px;
-}
-.navbar-nav li a:hover{
-    background-color: black;
-}
 section{
     padding: 20px;
     margin: 20px;
