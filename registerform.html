@@ -1,146 +1,156 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Educational registration form</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <title>Simple registration form</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <style>
       html, body {
-      min-height: 100%;
+      display: flex;
+      justify-content: center;
+      height: 100%;
       }
-      body, div, form, input, select, p { 
+      body, div, h1, form, input, p { 
       padding: 0;
       margin: 0;
       outline: none;
       font-family: Roboto, Arial, sans-serif;
       font-size: 16px;
-      color: #eee;
+      color: #666;
       }
-      body {
-      background: url("/uploads/media/default/0001/01/b5edc1bad4dc8c20291c8394527cb2c5b43ee13c.jpeg") no-repeat center;
-      background-size: cover;
-      }
-      h1, h2 {
-      text-transform: uppercase;
-      font-weight: 400;
-      }
-      h2 {
-      margin: 0 0 0 8px;
-      }
-      .main-block {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      padding: 25px;
-      background: rgba(0, 0, 0, 0.5); 
-      }
-      .left-part, form {
-      padding: 25px;
-      }
-      .left-part {
+      h1 {
+      padding: 10px 0;
+      font-size: 32px;
+      font-weight: 300;
       text-align: center;
       }
-      .fa-graduation-cap {
-      font-size: 72px;
+      p {
+      font-size: 12px;
+      }
+      hr {
+      color: #a9a9a9;
+      opacity: 0.3;
+      }
+      .main-block {
+      max-width: 340px; 
+      min-height: 460px; 
+      padding: 10px 0;
+      margin: auto;
+      border-radius: 5px; 
+      border: solid 1px #ccc;
+      box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+      background: #ebebeb; 
       }
       form {
-      background: rgba(0, 0, 0, 0.7); 
+      margin: 0 30px;
       }
-      .title {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
+      .account-type, .gender {
+      margin: 15px 0;
       }
-      .info {
-      display: flex;
-      flex-direction: column;
+      input[type=radio] {
+      display: none;
       }
-      input, select {
-      padding: 5px;
-      margin-bottom: 30px;
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid #eee;
+      label#icon {
+      margin: 0;
+      border-radius: 5px 0 0 5px;
       }
-      input::placeholder {
-      color: #eee;
-      }
-      option:focus {
-      border: none;
-      }
-      option {
-      background: black; 
-      border: none;
-      }
-      .checkbox input {
-      margin: 0 10px 0 0;
-      vertical-align: middle;
-      }
-      .checkbox a {
-      color: #26a9e0;
-      }
-      .checkbox a:hover {
-      color: #85d6de;
-      }
-      .btn-item, button {
-      padding: 10px 5px;
-      margin-top: 20px;
-      border-radius: 5px; 
-      border: none;
-      background: #26a9e0; 
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 400;
-      color: #fff;
-      }
-      .btn-item {
+      label.radio {
+      position: relative;
       display: inline-block;
-      margin: 20px 5px 0;
+      padding-top: 4px;
+      margin-right: 20px;
+      text-indent: 30px;
+      overflow: visible;
+      cursor: pointer;
+      }
+      label.radio:before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #1c87c9;
+      }
+      label.radio:after {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 4px;
+      top: 8px;
+      left: 4px;
+      border: 3px solid #fff;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after {
+      opacity: 1;
+      }
+      input[type=text], input[type=password] {
+      width: calc(100% - 57px);
+      height: 36px;
+      margin: 13px 0 0 -5px;
+      padding-left: 10px; 
+      border-radius: 0 5px 5px 0;
+      border: solid 1px #cbc9c9; 
+      box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+      background: #fff; 
+      }
+      input[type=password] {
+      margin-bottom: 15px;
+      }
+      #icon {
+      display: inline-block;
+      padding: 9.3px 15px;
+      box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+      background: #1c87c9;
+      color: #fff;
+      text-align: center;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
       }
       button {
       width: 100%;
+      padding: 10px 0;
+      margin: 10px auto;
+      border-radius: 5px; 
+      border: none;
+      background: #1c87c9; 
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
       }
-      button:hover, .btn-item:hover {
-      background: #85d6de;
-      }
-      @media (min-width: 568px) {
-      html, body {
-      height: 100%;
-      }
-      .main-block {
-      flex-direction: row;
-      height: calc(100% - 50px);
-      }
-      .left-part, form {
-      flex: 1;
-      height: auto;
-      }
+      button:hover {
+      background: #26a9e0;
       }
     </style>
   </head>
   <body>
     <div class="main-block">
-      <form>
-        <div class="title">
-          <i class="fas fa-pencil-alt"></i>
-          <h2>Register here</h2>
-        </div>
-        <div class="info">
-          <input class="fname" type="text" name="name" placeholder="Full name" required>
-          <input type="text" name="name" placeholder="Email" required>
-          <input type="text" name="name" placeholder="Phone number" required>
-          <select name="type" required>
+      <h1>Registration Form</h1>
+      <form action="/demoform" method='post'>
+        
+        <input type="text" name="email" id="name" placeholder="Email" required/>
+        
+        <input type="text" name="fname" id="name" placeholder="Name" required/>
+     
+        <input type="text" name="phoneno" id="name" placeholder="Phone Number" required/>
+      <br>
+      <br>
+      <select name="course" required>
 			<option selected disabled value = "">
 					Select Your Course
-                    </option>
+            </option>
             <option value="short-courses">Live Demo Class</option>
-            <option value="featured-courses">Pack of 30 LeetCode Problems Course</option>
-            <option value="undergraduate">Python Basics Live Course</option>
           </select>
+        <div class="btn-block">
+          <button type="submit" >Submit</button>
         </div>
-        <button type="submit">Submit</button>
       </form>
     </div>
   </body>
